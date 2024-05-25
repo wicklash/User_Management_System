@@ -1,0 +1,18 @@
+- UserManager.cs 35. Satır - "kayıt başarılı" message box'ı oluşturuldu.
+- UserManager.cs 117. satır - Eğer halihazırda kullanıcıların tutulduğu excel dosyası yoksa uygulama başlatıldığında import edilemedi şeklinde hata veriyordu. Catch yapısının içeriğindeki message box gereksiz olduğu için silindi. 
+
+- FormUserManagement.cs - Hücrelere tıklandığında değişiklik yapılamamas için datagridview Enable Editing özelliği false olarak ayarlandı.
+- FormUserManagement.cs 51 - 56. satırlar ve 102 - 106. satırlar - Admin üzerinde güncelleme veya silme işlemi yapılamaması için önlem olarak if yapısı eklendi.
+- FormUserManagement.cs 72 - 85. satırlar - Kullanıcı silindiğinde silinen kullanıcıya ait; telefon kaydı, hatırlatıcı, note gibi excel dosyaları silindi
+- FormUserManagement.cs 128 - 138. satırlar - Email ve telefon numarası update edildiğinde "valid" olup olmadığı kontrol edilmiyordu. Kontrol için ekleme yapıldı. Bu kontroller için iki adet fonksiyon yazıdlı.
+- FormUserManagement.cs 144. ve 146. satırlar - Email ve telefon numaraları update edilirken son kısma boşluk bırakılması ihtimali olduğundan, sondaki boşlukları silmek için .TrimEnd() eklendi
+- FormUserManagement.cs 46 - 50. satırlar - "Kullanıcıyı silmek için emin misiniz?" message box'ı oluşturuldu.
+
+- Users.cs 132. satır - "(555) 555 55 55     " gibi numaranın sonuna boşluk bırakıldığında hata alınıyordu. Hatayı gidermek için regex yapısının sonuna \s* eklendi.
+- Users.cs 122. satır - Telefon numarasındaki durum email durumu için gerçekleşirse diye regex yapısının sonuna \s* eklendi.(Galiba bu eklemeye gerek yok. Çünkü "b@hotmail." ifadesinde .'dan sonra ne yazılırsa yazılsın zaten kabul ediyor.)
+- Users.cs 62. ve 65. satırlar - Eğer sonuna boşluk karakteri koyulursa, o boşluk karakterlerini silmek için .TrimEnd() eklendi.
+
+- PhoneBookEntry.cs 79. ve 89. satırlar - Yukarıda belirttiğim sebepten ötürü regex yapısının sonuna \s* eklendi.
+- PhoneBookEntry.cs 45. ve 48. satırlar - Yukarıda belirttiğim sebepten ötürü .TrimEnd() eklendi.
+
+- FormMenu.cs 57 - 62. satırlar - "Çıkış yapmak için emin misiniz?" message box'ı oluşturuldu.
